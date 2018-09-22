@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:lyra="clr-namespace:Lyra"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="Lyra.HomePage">
+    <lyra:NowPlayingMoviesPage Title="Now Playing" Icon="nowplaying_movies.png"/>
+    <lyra:UpComingMoviesPage Title="UpComing" Icon="upcoming_movies.png"/>
+    <lyra:LatestMoviesPage Title="Latest" Icon="latest_movies.png"/>
+</TabbedPage>
