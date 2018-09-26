@@ -3,13 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lyra.NowPlayingMoviesPage">
     <ContentPage.Content>
-        <ListView SeparatorVisibility="None" HasUnevenRows="True">
+        <ListView SeparatorVisibility="None" HasUnevenRows="True" x:Name="LvNowPlaying">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="this is the first page" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                        <Frame BorderColor="LightGray" Margin="5" Padding="0" HasShadow="False">
+                            <Grid Margin="15,5,10,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0" 
+                                   CornerRadius="20"
+                                   Padding="0" >
+                                    <Image Aspect="AspectFill" Source="{Binding CoverImage}" />
+                            </Frame>
+                            <StackLayout Grid.Column="1"
+                                         Margin="10, 0, 0, 0">
+                                    <Label FontSize="20" TextColor="Black" Text="{Binding MovieName}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="16" TextColor="#757575" Text="Director" />
+                                    <Label FontSize="16" TextColor="Black" Text="{Binding Director}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="16" TextColor="#757575" Text="Duration" />
+                                    <Label FontSize="16" TextColor="Black" Text="{Binding Duration}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="16" TextColor="#757575" Text="Language" />
+                                        <Label FontSize="16" TextColor="Black" Text="{Binding Language}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                        <Label FontSize="16" TextColor="Black" FontAttributes="Bold" Text="{Binding Rating}" />
+                                    <Image HeightRequest="20" WidthRequest="20" Source="star_icon.png"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

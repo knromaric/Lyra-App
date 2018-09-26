@@ -23,6 +23,13 @@ namespace Lyra.Models
         public string Genre { get; set; }
         public string TrailorLink { get; set; }
         public string Logo { get; set; }
+        public string CoverImage
+        {
+            get
+            {
+                return String.Format("http://colosseum.somee.com/{0}", Logo.Substring(1));
+            }
+        }
         public object LogoFile { get; set; }
     }
 }
