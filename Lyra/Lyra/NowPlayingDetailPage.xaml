@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lyra.NowPlayingDetailPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="{Binding CoverImage}" 
+                   Grid.Row="0"
+                   Grid.RowSpan="4"
+                   Aspect="Fill"/>
+            
+            <BoxView Color="Black" 
+                     Opacity="0.6"
+                     Grid.Row="0"
+                     Grid.RowSpan="4" />
+            <Label Text="{Binding MovieName}" 
+                   Grid.Row="1"
+                   TextColor="White"
+                   FontSize="24"
+                   Margin="15,0,0,0"/>
+            <StackLayout Margin="5,0,0,0" 
+                         Grid.Row="2" 
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Aspect="AspectFill"
+                           Source="Ellipse.png"
+                           Grid.Column="0" />
+                    <Label TextColor="White" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Text="{Binding RatedLevel}" 
+                           Grid.Column="0" />
+                    <Label TextColor="Black"
+                           BackgroundColor="White"
+                           Text="{Binding Duration}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Grid.Column="1" />
+                    <Label TextColor="Black"
+                           BackgroundColor="White"
+                           Text="{Binding Language}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Grid.Column="2" />
+                </Grid>
+            </StackLayout>
+
+            <Image HorizontalOptions="End" 
+                   Margin="0,0,20,0" 
+                   Source="play_icon.png" 
+                   Grid.Row="3" 
+                   Grid.RowSpan="2" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="PlayVideo" Tapped="PlayVideo_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <StackLayout HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="5">
+                <Label Margin="5,0,5,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="16" TextColor="Black" FontAttributes="Bold" Text="Genre"/>
+                            <Span FontSize="16" TextColor="Black" Text="{Binding Genre}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Margin="5,0,5,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="16" TextColor="Black" FontAttributes="Bold" Text="Playing Date"/>
+                            <Span FontSize="16" TextColor="Black" Text="{Binding PlayingDate}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Margin="5,0,5,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="16" TextColor="Black" FontAttributes="Bold" Text="Starring"/>
+                            <Span FontSize="16" TextColor="Black" Text="{Binding Cast}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <ScrollView>
+                    <Label Margin="5,0,5,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontSize="16" TextColor="Black" FontAttributes="Bold" Text="Description"/>
+                                <Span FontSize="16" TextColor="Black" Text="{Binding Description}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </ScrollView>
+                <Button HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="EndAndExpand"
+                        TextColor="white"
+                        BackgroundColor="#FF5722"
+                        FontSize="24" 
+                        Text="Book Ticket"
+                        x:Name="BtnBookTicket"/>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

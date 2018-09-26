@@ -22,6 +22,13 @@ namespace Lyra.Models
         public string RatedLevel { get; set; }
         public string Genre { get; set; }
         public string TrailorLink { get; set; }
+        public string MovieTrailor
+        {
+            get
+            {
+                return TrailorLink.Replace("watch?v=", "embed/");
+            }
+        } 
         public string Logo { get; set; }
         public string CoverImage
         {
@@ -30,6 +37,8 @@ namespace Lyra.Models
                 return String.Format("http://colosseum.somee.com/{0}", Logo.Substring(1));
             }
         }
+
+       
         public object LogoFile { get; set; }
     }
 }

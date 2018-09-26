@@ -195,4 +195,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\star_icon%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ellipse%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ellipse%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play_icon%403x.png" />
+  </ItemGroup>
 </Project>

@@ -33,5 +33,13 @@ namespace Lyra
             LvNowPlaying.ItemsSource = NowPlayingMoviesCollection;
 
         }
+
+        private async void OnMovieSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedMovie = e.SelectedItem as NowPlayingMovie;
+            LvNowPlaying.SelectedItem = null;
+            var detailPage = new NowPlayingDetailPage(selectedMovie);
+            await Navigation.PushAsync(detailPage);     
+        }
     }
 }
