@@ -1,17 +1,17 @@
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Lyra
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new HomePage());
+            //MainPage = new BookTicketPage();
 		}
 
 		protected override void OnStart ()

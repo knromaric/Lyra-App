@@ -1,21 +1,17 @@
 ﻿using Lyra.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Lyra
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NowPlayingDetailPage : ContentPage
 	{
         private NowPlayingMovie _movie;
+
         public NowPlayingDetailPage (NowPlayingMovie movie)
-        {
+        { 
             _movie = movie;
             InitializeComponent ();
             BindingContext = _movie;
@@ -25,6 +21,13 @@ namespace Lyra
         {
             var videoPage = new VideoPage(_movie.MovieTrailor);
             await Navigation.PushAsync(videoPage);
+        }
+
+        private async void OnBookTicket(object sender, EventArgs e)
+        {
+            var bookTicketPage = new BookTicketPage(_movie);
+
+            await Navigation.PushAsync(bookTicketPage);
         }
     }
 }
