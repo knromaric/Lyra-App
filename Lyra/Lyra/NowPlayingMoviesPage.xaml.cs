@@ -31,6 +31,7 @@ namespace Lyra
             }
 
             LvNowPlaying.ItemsSource = NowPlayingMoviesCollection;
+            BusyIndicator.IsRunning = false;
 
         }
 
@@ -38,6 +39,7 @@ namespace Lyra
         {
             var selectedMovie = e.SelectedItem as NowPlayingMovie;
             LvNowPlaying.SelectedItem = null;
+            
             var detailPage = new NowPlayingDetailPage(selectedMovie);
             await Navigation.PushAsync(detailPage);     
         }

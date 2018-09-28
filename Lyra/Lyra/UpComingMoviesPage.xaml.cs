@@ -29,13 +29,18 @@ namespace Lyra
             }
             
             LvUpComing.ItemsSource = UpComingMovies;
+            UpComingIndicator.IsRunning = false; 
         }
 
         private async void LvUpComing_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
             var upComingMovie = e.ItemData as UpComingMovie;
-            string trailorLink = upComingMovie.MovieTrailor;
-            await Navigation.PushAsync(new VideoPage(trailorLink));
+            if(upComingMovie != null)
+            {
+                string trailorLink = upComingMovie.MovieTrailor;
+                await Navigation.PushAsync(new VideoPage(trailorLink));
+            }
+            
         }
     }
 }

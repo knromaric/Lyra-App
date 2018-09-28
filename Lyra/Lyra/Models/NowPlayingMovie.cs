@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lyra.Models
 {
@@ -37,5 +35,7 @@ namespace Lyra.Models
                 return String.Format("http://colosseum.somee.com/{0}", Logo.Substring(1));
             }
         }
+
+        public object LogoFile { get; set; }
     }
 }

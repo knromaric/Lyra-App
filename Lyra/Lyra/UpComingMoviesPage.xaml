@@ -4,17 +4,24 @@
              xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              x:Class="Lyra.UpComingMoviesPage">
     <ContentPage.Content>
-        <xForms:SfListView x:Name="LvUpComing" AutoFitMode="Height" ItemTapped="LvUpComing_ItemTapped">
-            <xForms:SfListView.LayoutManager>
-                <xForms:GridLayout SpanCount="3"></xForms:GridLayout>
-            </xForms:SfListView.LayoutManager>
-            <xForms:SfListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid HeightRequest="200" Margin="2,5,2,5">
-                        <Image Aspect="Fill" Source="{Binding CoverImage}" />
-                    </Grid>
-                </DataTemplate>
-            </xForms:SfListView.ItemTemplate>
-        </xForms:SfListView>
+        <Grid>
+            <xForms:SfListView x:Name="LvUpComing" AutoFitMode="Height" ItemTapped="LvUpComing_ItemTapped">
+                <xForms:SfListView.LayoutManager>
+                    <xForms:GridLayout SpanCount="3"></xForms:GridLayout>
+                </xForms:SfListView.LayoutManager>
+                <xForms:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HeightRequest="200" Margin="2,5,2,5">
+                            <Image Aspect="Fill" Source="{Binding CoverImage}" />
+                        </Grid>
+                    </DataTemplate>
+                </xForms:SfListView.ItemTemplate>
+            </xForms:SfListView>
+            <ActivityIndicator HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Color="#FF5722"
+                               IsRunning="True"
+                               x:Name="UpComingIndicator" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
