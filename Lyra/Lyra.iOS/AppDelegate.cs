@@ -23,6 +23,7 @@ namespace Lyra.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255,87,34);
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
